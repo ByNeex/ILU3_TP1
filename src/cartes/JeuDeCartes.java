@@ -4,6 +4,32 @@ public class JeuDeCartes {
 	
 	private Configuration[] typesDeCartes;
 	
+	
+	public Carte[] donnerCartes() {
+		
+		// calcul de la taille totale du paquet de carte - Normalement 106
+		int tailleTotale = 0;
+		for (int i = 0; i < typesDeCartes.length; i++) {
+			tailleTotale += typesDeCartes[i].getNbExemplaires();
+		}
+		 
+		Configuration[] typeC = typesDeCartes;
+		Carte[] toutesCartes = new Carte[tailleTotale];
+		
+		
+		// boucle de remplissage
+		int posTabFinal = 0;
+		for (int i = 0; i < typeC.length; i++) {
+			for (int j = 0; j < typeC[i].getNbExemplaires(); j++) {
+				toutesCartes[posTabFinal] = typeC[i].getCarte();
+				posTabFinal ++;
+			}
+		}
+		return toutesCartes;
+		
+	}
+	
+	
 	public JeuDeCartes() {
 		typesDeCartes = new Configuration[19]; // 19 cartes différentes
 		
