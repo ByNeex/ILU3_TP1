@@ -67,7 +67,6 @@ public class JeuDeCartes {
 	
 	public String affichageJeuDeCartes() {
 		StringBuilder affichageJeu = new StringBuilder();
-		affichageJeu.append("JEU :\n\n");
 		
 		for (int i = 0; i < typesDeCartes.length; i++) {
 			affichageJeu.append(typesDeCartes[i].getNbExemplaires() + " ");
