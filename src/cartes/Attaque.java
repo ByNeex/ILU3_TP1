@@ -2,8 +2,12 @@ package cartes;
 
 public class Attaque extends Bataille {
 
-	public Attaque() {
-		// TODO Auto-generated constructor stub
+	public Attaque(Type type) {
+		super(type);
 	}
-
+	
+	@Override
+	public String toString() {
+		return getType().getNomAttaque();
+	}
 }
