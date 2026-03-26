@@ -97,6 +97,37 @@ public class JeuDeCartes {
 		
 	}
 	
+	public boolean checkCount(){
+		Carte[] cartes = donnerCartes();
+		
+		for (int i = 0; i < typesDeCartes.length; i++) {
+			Configuration configuration = typesDeCartes[i];
+			Carte carteSouhaite = configuration.getCarte();
+			int nbSouhaite = configuration.getNbExemplaires();
+			
+			// comptage du nombre de la ième carte dans le paquet
+			int count = 0;
+			for (int j = 0; j < cartes.length; j++) {
+				//if(cartes[j] == carteSouhaite) {
+					//count++;
+				//}
+				
+				// avec le .equals qu'on vient de programmer c mieux
+				if(cartes[j].equals(carteSouhaite)) {
+					count++;
+				}
+				
+			}
+			// verif du bon comptage
+			if(count != nbSouhaite) {
+				return false;
+			}
+					
+		}
+		return true;	
+	}
+	
+	
 	
 	// Test avec main
 	/*public static void main(String[] args) {

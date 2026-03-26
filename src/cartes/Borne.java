@@ -15,8 +15,9 @@ public class Borne extends Carte {
 	// Ajout du TP2
 	@Override
 	public boolean equals(Object obj) {
-		Borne recupBorne = (Borne) obj;
-		return this.km == recupBorne.km;
+		// j'ai tester avec le cast au préalable dans une autre variable
+		// mais ça causait un "NullPointer"
+		return super.equals(obj) && this.km == ((Borne) obj).km;
 	}
 
 }
