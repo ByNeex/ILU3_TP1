@@ -59,5 +59,9 @@ public class Joueur {
 		return false;
 	}
 	
+	public boolean estDepotAutorise(Carte carte) {
+		return zoneJoueur.estDepotAutorise(carte);
+	}
+	
 	
 }

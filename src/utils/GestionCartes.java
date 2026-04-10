@@ -67,18 +67,33 @@ public class GestionCartes {
 		return true;
 	}
 	
+	
+	
 	// d) 
-	public static <T> List<T> rassembler(List<T> lst){
-		List<T> lstConsec = new ArrayList<>();
-		for (ListIterator<T> iterateur = lstConsec.listIterator(); iterateur.hasNext();) {
-			T elt = iterateur.next();
+	//public static <T> List<T> rassembler(List<T> lst){
+		//List<T> lstConsec = new ArrayList<>();
+		//for (ListIterator<T> iterateur = lstConsec.listIterator(); iterateur.hasNext();) {
+			//T elt = iterateur.next();
 			
+			//if (!lstConsec.contains(elt)) {
+				//for (int i = 0; i < Collections.frequency(lst, elt); i++) {
+					//lstConsec.add(elt);
+				//}
+			//}
+			
+		//}
+		//return lstConsec;
+	//}
+	
+	public static <T> List<T> rassembler(List<T> lst) {
+		List<T> lstConsec = new ArrayList<>();
+		for (T elt : lst) {
 			if (!lstConsec.contains(elt)) {
-				for (int i = 0; i < Collections.frequency(lst, elt); i++) {
+				int nbOccurrences = Collections.frequency(lst, elt);
+				for (int i = 0; i < nbOccurrences; i++) {
 					lstConsec.add(elt);
 				}
 			}
-			
 		}
 		return lstConsec;
 	}

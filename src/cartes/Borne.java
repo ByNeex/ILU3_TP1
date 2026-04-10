@@ -25,6 +25,9 @@ public class Borne extends Carte {
 	public boolean equals(Object obj) {
 		// j'ai tester avec le cast au préalable dans une autre variable
 		// mais ça causait un "NullPointer"
+		if (obj == null || this.getClass() != obj.getClass()) {
+			return false;
+		}
 		return super.equals(obj) && this.km == ((Borne) obj).km;
 	}
 
